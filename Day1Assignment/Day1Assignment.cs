@@ -11,11 +11,13 @@ namespace Day1Assignment
             Console.Write("Enter Name: ");
             name = Console.ReadLine();
             
+            // Enter age
             Console.Write("Enter age: ");
             int age = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Name: " + name + "\nAge: " + age);
-
+            // Display Result
+            Console.WriteLine($"Name: {name}\nAge: {age}");
+         
         }
     }
 }
