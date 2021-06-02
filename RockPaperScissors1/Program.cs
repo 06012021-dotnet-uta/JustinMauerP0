@@ -1,4 +1,4 @@
-﻿// Assignment:
+﻿// Day 2 Assignment:
 // Get player name - Completed
 // Loop for another game - Completed
 // Play 3 games find best of - Completed
@@ -68,6 +68,7 @@ namespace RockPaperScissors1
                     //     Console.WriteLine($"the conversion returned {successfulConversion} and the player chose {p1Int}");
                     
                     // Generate cpu choice with random integer
+
                     Random rand = new Random();
                     int cpuChoice = rand.Next(1,4);
 
