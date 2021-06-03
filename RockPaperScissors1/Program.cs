@@ -16,7 +16,7 @@ namespace RockPaperScissors1
         
         static void Main(string[] args)
         {
-           
+            
             // Display introduction
             Console.Write("\tWelcome to Rock-Paper-Scissors\nEnter Your Name:");
            
