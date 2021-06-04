@@ -1,7 +1,5 @@
 ﻿// Assignment:
-// Get player name - Completed
-// Loop for another game - Completed
-// Play 3 games find best of - Completed
+// Create different classes to handle functionalities
 using System;
 
 namespace RockPaperScissors1
@@ -17,73 +15,54 @@ namespace RockPaperScissors1
         static void Main(string[] args)
         {
             
+            
             // Display introduction
-            Console.Write("\tWelcome to Rock-Paper-Scissors\nEnter Your Name:");
+            RpsGame rpsGame = new RpsGame();
+        //    Console.Write("\tWelcome to Rock-Paper-Scissors\nEnter Your Name:");
            
+            // Welcome message
+            Console.Write(rpsGame.WelcomeMessage());
+
+            PlayerDerivedClass player1 = new PlayerDerivedClass();
+
             // Prompt the user to enter name
-            string name = Console.ReadLine();
-            Console.Write($"\n{name} enter your choice: ");
+            player1.Fname = rpsGame.GetPlayerName(Console.ReadLine());
+            System.Console.Write("Enter Your Last Name: ");
+            player1.Lname = rpsGame.GetPlayerName(Console.ReadLine());
+            
+            string name = player1.Fname + " " + player1.Lname;
             bool playAgain = true;
-            
-            
 
             // Do loop handles if the player wants to play again
             do
             {
                 int p1WinCount = 0;
                 int cpuWinCount = 0;
-                int p1Int;
-                bool successfulConversion = false;  
+                int p1Choice;
+                int cpuChoice; 
 
                 // Do loop handles best of 3
                 do
                 {
-                    // Do loop handles each round
-                    do {
-                        
-                        // Promt user to input choice
-                        System.Console.Write("\n1. Rock\n2. Paper\n3. Scissors\n");
-                        
-                        // Initialize choice
-                        string p1Choice = Console.ReadLine();
+                    // Player Choice
+                    p1Choice = rpsGame.PlayerSelection(player1);
                     
-                        successfulConversion = Int32.TryParse(p1Choice, out p1Int);
-                        
-                        // check if user inputs number out of bounds
-                        if (p1Int > 3 || p1Int < 1)
-                        {
-                            Console.WriteLine($"{name}, you put in {p1Int}. This is not a valid choice!");
-                        }
-                        else if (!successfulConversion)
-                        {
-                            Console.WriteLine($"{name}, you put in {p1Choice}. This is not a valid choice!");
-                        }
+                    // CPU Choice
+                    cpuChoice = rpsGame.CpuChoice();
 
-                    }   while(!successfulConversion  || (p1Int < 1 || p1Int > 3));
-
-                    // Test successfule conversion
-                    // if (successfulConversion == true)
-                    //     Console.WriteLine($"the conversion was {successfulConversion} and the player chose {p1Int}");
-                    // else
-                    //     Console.WriteLine($"the conversion returned {successfulConversion} and the player chose {p1Int}");
-                    
-                    // Generate cpu choice with random integer
-                    Random rand = new Random();
-                    int cpuChoice = rand.Next(1,4);
-
-                    // Test to see if we have both choices
-                    Console.WriteLine($"\n{name} choice is\t{p1Int} " + (RpsChoice)p1Int);
+                    // Display player choices
+                    Console.WriteLine($"\n{name} choice is\t{p1Choice} " + (RpsChoice)p1Choice);
                     Console.WriteLine($"Computer choice is\t{cpuChoice} " + (RpsChoice)cpuChoice);
 
                     // Check to see who wins each round
-                    if (p1Int == 1 && cpuChoice == 2
-                            || p1Int == 2 && cpuChoice == 3
-                            || p1Int == 3 && cpuChoice == 1 )
+                    if (p1Choice == 1 && cpuChoice == 2
+                            || p1Choice == 2 && cpuChoice == 3
+                            || p1Choice == 3 && cpuChoice == 1 )
                     {
                         Console.WriteLine("\tComputer Wins This Round!");
                         cpuWinCount++;
                     }
-                    else if (p1Int == cpuChoice)
+                    else if (p1Choice == cpuChoice)
                         Console.WriteLine("\tTie!");
                     else
                     {

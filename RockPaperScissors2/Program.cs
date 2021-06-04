@@ -2,11 +2,11 @@
 
 namespace RockPaperScissors2
 {
-    class Program
+    class RpsGame
     {
-        static void Main(string[] args)
+        public string WelcomeMessage()
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
