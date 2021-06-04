@@ -1,5 +1,8 @@
-﻿// Assignment:
-// Create different classes to handle functionalities
+
+// Day 2 Assignment:
+// Get player name - Completed
+// Loop for another game - Completed
+// Play 3 games find best of - Completed
 using System;
 
 namespace RockPaperScissors1
@@ -48,9 +51,11 @@ namespace RockPaperScissors1
                 {
                     // Player Choice
                     p1Choice = rpsGame.PlayerSelection(player1);
-                    
-                    // CPU Choice
-                    cpuChoice = rpsGame.CpuChoice();
+                   
+                    // Generate cpu choice with random integer
+
+                    Random rand = new Random();
+                    int cpuChoice = rand.Next(1,4);
 
                     // Display player choices
                     Console.WriteLine($"\n{name} choice is\t{p1Choice} " + (RpsChoice)p1Choice);
