@@ -13,6 +13,7 @@ namespace RockPaperScissors1
             get
             {
                 return fname;
+                
             }
             set
             {

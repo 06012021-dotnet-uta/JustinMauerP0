@@ -16,6 +16,8 @@ namespace RockPaperScissors1
         {
             
             
+            System.Console.WriteLine();
+            
             // Display introduction
             RpsGame rpsGame = new RpsGame();
         //    Console.Write("\tWelcome to Rock-Paper-Scissors\nEnter Your Name:");
