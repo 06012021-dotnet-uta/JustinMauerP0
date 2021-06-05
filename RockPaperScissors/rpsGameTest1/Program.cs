@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace rpsGameTest1
 {
     class Program
