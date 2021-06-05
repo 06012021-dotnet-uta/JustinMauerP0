@@ -1,5 +1,3 @@
-﻿// Assignment:
-// Create different classes to handle functionalities
 using System;
 
 namespace RockPaperScissors1
@@ -32,6 +30,9 @@ namespace RockPaperScissors1
                     
                     // CPU Choice
                     player2.rpsChoice = rpsGame.CpuChoice();
+
+                    Random rand = new Random();
+                    int cpuChoice = rand.Next(1,4);
 
                     // Display player choices
                     Console.WriteLine($"\n{player1.Fname} choice is\t{player1.rpsChoice} " + (RpsChoice)player1.rpsChoice);
