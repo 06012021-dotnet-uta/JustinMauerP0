@@ -3,16 +3,13 @@ namespace RockPaperScissors1
 {
     public class RpsGame
     {
-        
-        
-        public string WelcomeMessage()
-        {
-            // User choice to play another player or computer?
-             
-            string welcome = "\tWelcome to Rock-Paper-Scissors\nEnter Your First Name: ";
-            return welcome;
-        }
-
+        /// <summary>
+        /// This method displays a welcome message to the 
+        /// user and prompts them to enter their first
+        /// and last name. It then returns a new 
+        /// <see cref="PlayerDerivedClass"/> object.
+        /// </summary>
+        /// <returns></returns>
         public PlayerDerivedClass Welcome()
         {
             // Display Welcome Message And Get User Description
@@ -23,10 +20,13 @@ namespace RockPaperScissors1
             player.Lname = Console.ReadLine();
 
             return player;
-
-
         }
-
+        /// <summary>
+        /// This method prompts the user to enter
+        /// a name for a new <see cref="PlayerDerivedClass"/>
+        /// and then returns the object.
+        /// </summary>
+        /// <returns></returns>
         public PlayerDerivedClass CreateComputer()
         {
             PlayerDerivedClass player = new PlayerDerivedClass();
@@ -37,7 +37,11 @@ namespace RockPaperScissors1
             return player;
         }
 
-        // Generate random CPU choice
+        /// <summary>
+        /// Returns a random integer between 1-3 inclusive 
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int CpuChoice()
         {
             Random rand = new Random();
@@ -45,10 +49,15 @@ namespace RockPaperScissors1
             return cpuChoice;
         }
 
-        // Player selection method
+        /// <summary>
+        /// Displays a message to the <see cref="PlayerDerivedClass"/> user to select
+        /// an option then returns the int value of that option.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public int PlayerSelection(PlayerDerivedClass player)
         {
-            // Promt user to input choice
+            // Prompt user to input choice
             Console.Write($"{player.Fname} choose:\n1. Rock\n2. Paper\n3. Scissors\n");
             
             // Initialize choice declare player int
@@ -79,10 +88,17 @@ namespace RockPaperScissors1
 
         }
 
-        // This method calculates the winner
+        /// <summary>
+        /// This method decides who the winner is.
+        /// 0 = tie
+        /// 1 = p1Choice won
+        /// 2 = p2Choice won
+        /// </summary>
+        /// <param name="p1Choice"></param>
+        /// <param name="p2Choice"></param>
+        /// <returns></returns>
         public int GetRoundWinner(int p1Choice, int p2Choice)
         {
-            
             if (p1Choice == 1 && p2Choice == 2
                             || p1Choice == 2 && p2Choice == 3
                             || p1Choice == 3 && p2Choice == 1 )
@@ -94,7 +110,15 @@ namespace RockPaperScissors1
             
         }
 
-        // Decide the winner and return true if winner is present
+        /// <summary>
+        /// This method displays each <see cref="PlayerDerivedClass"/>
+        /// players win count and the winner of the entire game.
+        /// Returns true if the user chooses to play again or false
+        /// if the user chooses to stop the program.
+        /// </summary>
+        /// <param name="player1"></param>
+        /// <param name="player2"></param>
+        /// <returns></returns>
         public bool EndOfGame(PlayerDerivedClass player1, PlayerDerivedClass player2)
         {
             bool playAgain = false;
@@ -115,10 +139,10 @@ namespace RockPaperScissors1
             {   
                 Console.WriteLine("Would you like to play again?(Y/N)");
                 playAgainChoice = Console.ReadLine();
-                playAgainChoice.ToUpper();
-            } while (!playAgainChoice.Equals("Y") || !playAgainChoice.Equals("N"));
+                playAgainChoice = playAgainChoice.ToUpper();
+            } while (playAgainChoice != "Y" && playAgainChoice != "N");
             
-            if(playAgainChoice.ToUpper().Equals("Y"))
+            if(playAgainChoice == "Y")
             {
                 player1.winCount = 0;
                 player2.winCount = 0;

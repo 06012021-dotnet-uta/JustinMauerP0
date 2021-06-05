@@ -6,7 +6,6 @@ namespace RockPaperScissors1
         private int myAge;
         public string Street { get; set; }
         public string State { get; set;}
-     //   public string City {get: set;}
         public int winCount {get; set;}
         public int rpsChoice {get; set;}
 
@@ -24,16 +23,13 @@ namespace RockPaperScissors1
 
         public PlayerDerivedClass() : base()
         {
-            
-        //    this.fname = "derivedClassfname";
-        //    this.lname = "derivedClasslname";
+
         }
 
-        // Must create all overload constructors
+        
         public PlayerDerivedClass(string fname, string lname) : base(fname, lname)
         {
-        //    this.fname = fname;
-        //    this.lname = lname;
+        
         }
 
         public PlayerDerivedClass(string fname, string lname, int age) : base(fname, lname)
