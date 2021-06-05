@@ -14,86 +14,43 @@ namespace RockPaperScissors1
         
         static void Main(string[] args)
         {
-            
-            
             // Display introduction
             RpsGame rpsGame = new RpsGame();
-        //    Console.Write("\tWelcome to Rock-Paper-Scissors\nEnter Your Name:");
-           
-            // Welcome message
-            Console.Write(rpsGame.WelcomeMessage());
 
-            PlayerDerivedClass player1 = new PlayerDerivedClass();
-
-            // Prompt the user to enter name
-            player1.Fname = rpsGame.GetPlayerName(Console.ReadLine());
-            System.Console.Write("Enter Your Last Name: ");
-            player1.Lname = rpsGame.GetPlayerName(Console.ReadLine());
-            
-            string name = player1.Fname + " " + player1.Lname;
-            bool playAgain = true;
+            // Initialize player class references
+            PlayerDerivedClass player1 = rpsGame.Welcome();
+            PlayerDerivedClass player2 = rpsGame.CreateComputer();
 
             // Do loop handles if the player wants to play again
             do
             {
-                int p1WinCount = 0;
-                int cpuWinCount = 0;
-                int p1Choice;
-                int cpuChoice; 
-
-                // Do loop handles best of 3
                 do
                 {
                     // Player Choice
-                    p1Choice = rpsGame.PlayerSelection(player1);
+                    player1.rpsChoice = rpsGame.PlayerSelection(player1);
                     
                     // CPU Choice
-                    cpuChoice = rpsGame.CpuChoice();
+                    player2.rpsChoice = rpsGame.CpuChoice();
 
                     // Display player choices
-                    Console.WriteLine($"\n{name} choice is\t{p1Choice} " + (RpsChoice)p1Choice);
-                    Console.WriteLine($"Computer choice is\t{cpuChoice} " + (RpsChoice)cpuChoice);
+                    Console.WriteLine($"\n{player1.Fname} choice is\t{player1.rpsChoice} " + (RpsChoice)player1.rpsChoice);
+                    Console.WriteLine($"{player2.Fname} choice is\t{player2.rpsChoice} " + (RpsChoice)player2.rpsChoice);
 
-                    // Check to see who wins each round
-                    if (p1Choice == 1 && cpuChoice == 2
-                            || p1Choice == 2 && cpuChoice == 3
-                            || p1Choice == 3 && cpuChoice == 1 )
+                    switch(rpsGame.GetRoundWinner(player1.rpsChoice, player2.rpsChoice))
                     {
-                        Console.WriteLine("\tComputer Wins This Round!");
-                        cpuWinCount++;
+                        case 0: Console.WriteLine("\tTie!");
+                                break;
+                        case 1: Console.WriteLine($"\t{player1.Fname} Wins This Round!");
+                                player1.winCount++;
+                                break;
+                        case 2: Console.WriteLine($"\t{player2.Fname} Wins This Round!");
+                                player2.winCount++;
+                                break;
+                        
                     }
-                    else if (p1Choice == cpuChoice)
-                        Console.WriteLine("\tTie!");
-                    else
-                    {
-                        Console.WriteLine($"\t{name} Wins This Round!");  
-                        p1WinCount++;
-                    }
-                } while(p1WinCount < 2 && cpuWinCount < 2);
-    
-                // Display total wins
-                Console.WriteLine("\nComputer Total Wins: " + cpuWinCount);
-                Console.WriteLine($"{name} Total Wins:   " + p1WinCount);
 
-                // Display winner
-                if (cpuWinCount > p1WinCount)
-                    Console.WriteLine("\n\tCOMPUTER WON THE MATCH!");
-                else
-                {
-                    string nameUp = name.ToUpper();
-                    Console.WriteLine($"\n\t{nameUp} WON THE MATCH!");
-                }
-
-                // Prompt asking if user wants to play again
-                Console.WriteLine("Would you like to play again?(Y/N)");
-                string playAgainChoice = Console.ReadLine();
-
-                if(playAgainChoice.ToUpper().Equals("Y"))
-                    playAgain = true;
-                else
-                    playAgain = false;
-
-            } while(playAgain);
+                } while(player1.winCount < 2 && player2.winCount < 2);
+            } while(rpsGame.EndOfGame(player1, player2));
 
             Console.WriteLine("\t\tGAMEOVER");
         } 

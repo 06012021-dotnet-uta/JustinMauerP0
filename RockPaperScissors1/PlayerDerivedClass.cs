@@ -7,6 +7,8 @@ namespace RockPaperScissors1
         public string Street { get; set; }
         public string State { get; set;}
      //   public string City {get: set;}
+        public int winCount {get; set;}
+        public int rpsChoice {get; set;}
 
         public int MyAge{
             get
@@ -22,6 +24,7 @@ namespace RockPaperScissors1
 
         public PlayerDerivedClass() : base()
         {
+            
         //    this.fname = "derivedClassfname";
         //    this.lname = "derivedClasslname";
         }
