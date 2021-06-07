@@ -1,7 +1,7 @@
 using System;
 namespace RockPaperScissors1
 {
-    public class RpsGame
+    public class RpsGame :IRpsGame
     {
         /// <summary>
         /// This method displays a welcome message to the 

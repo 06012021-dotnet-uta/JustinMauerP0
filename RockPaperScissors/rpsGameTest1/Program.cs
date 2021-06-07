@@ -1,12 +1,20 @@
 ﻿using System;
+using Xunit;
+using RockPaperScissors1;
 
 namespace rpsGameTest1
 {
     class Program
     {
-        static void Main(string[] args)
+        [Theory]
+        [InlineData(1,2)]
+        public void EvaluateRoundWinner(int a, int b)
         {
-            Console.WriteLine("Hello World!");
+            IRpsGame game = new RockPaperScissors1.RpsGame();
+
+            int result = game.GetRoundWinner(a,b);
+
+            Assert.Equals(2, result);
         }
     }
 }
