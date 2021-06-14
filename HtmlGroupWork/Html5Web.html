@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Html Practice</title>
+</head>
+
+<body>
+    <img src="HTML5_logo_black.png" height="200px" width="200px" alt="Html5 Logo">
+
+    <h1><strong>About</strong></h1>
+    <p> This is a simple website that provides <br>
+        tourist information for each city.</p>
+
+    <h1>Locations</h1>
+    <ul>
+        <li>
+            USA
+            <ul>
+                <li>
+                    <a href="https://www.tripadvisor.com/Attraction_Products-g60763-New_York_City_New_York.html" target="blank">New York</a>
+                </li>
+                <li>
+                    <a href="https://www.tripadvisor.com/SmartDeals-g49046-Columbus_North_Carolina-Hotel-Deals.html" target="blank">Columbus</a>
+                </li>
+                <li>
+                    <a href="https://www.tripadvisor.com/SmartDeals-g30196-Austin_Texas-Hotel-Deals.html" target="blank">Austin</a>
+                </li>
+                <li>
+                    <a href="https://www.tripadvisor.com/SmartDeals-g60795-Philadelphia_Pennsylvania-Hotel-Deals.html" target="blank">Philly</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            World
+            <ul>
+                <li>
+                    <a href="https://www.tripadvisor.com/SmartDeals-g155004-Ottawa_Ontario-Hotel-Deals.html" target="blank">Ottawa</a>
+                </li>
+                <li>
+                    <a href="https://www.tripadvisor.com/SmartDeals-g255060-Sydney_New_South_Wales-Hotel-Deals.html" target="blank">Sydney</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1>Upcoming Flights</h1>
+    <table border="1">
+        <thead>
+            <th><b>Location</b></th>
+            <th>Date</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>New York</td>
+                <td>06/15/2021</td>
+            </tr>
+            <tr>
+                <td>Seattle</td>
+                <td>06/20/2021</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1> Sign Up!</h1>
+    <form enctype="multipart/form-data" action="" method="get">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id=""><br>
+        <label for="location">Location:</label>
+        <select name="location" id="">
+            <option value="newYork">New York</option>
+            <option value="columbus">Columbus</option>
+            <option value="austin">Austin</option>
+            <option value="philly">Philly</option>
+        </select>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+            
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+            
+
+        </fieldset>
+
+    </form>
+</body>
