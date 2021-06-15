@@ -1,0 +1,82 @@
+.cssdemo{
+    width: 150;
+    border-style: solid;
+    border-color: red;
+    border-width: 100px 25px;
+}
+
+div{
+    background-color: aqua;
+}
+.class1, .class2{
+    border: 15px dotted blue;
+    width: 100;
+}
+#id{
+    display: inherit;
+}
+
+.class3:active{
+    
+    color: white;
+    background-color: black;
+
+}
+
+.class4:hover{
+
+    color: white;
+    background-color: black;
+    width:100;
+}
+
+a:visited
+{
+    color:green;
+}
+
+/*gets first gen decendent of the element */
+div>sub:hover{
+    background-color: pink;
+}
+
+.class5::first-letter{
+    color: brown;
+    font-variant: small-caps;
+    font-style: italic;
+}
+
+ul+ol{
+    background-color: aquamarine;
+    border: 15px;
+}
+
+#id2{
+    border: solid pink;
+}
+
+form~p{
+    color: green;
+    outline-width: 10px;
+    border: solid black !important;
+}
+
+#myPic{
+    position: sticky;
+    top: 80px;
+    right: 0;
+    width: 80px;
+    height: 100px;
+    border: 3px;
+
+}
+
+#boxModelId
+{
+    background-color: grey;
+    width: 150;
+    border: 15px solid green;
+    margin: 20px 50px 100px;
+    padding: 50px;
+
+}
