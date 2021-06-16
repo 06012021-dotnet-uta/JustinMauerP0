@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoPartStore", "AutoPartStore.csproj", "{FD3AA5CB-0C26-4DF7-B461-42D8A0640F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoPartStoreDbContext", "..\AutoPartStoreDbContext\AutoPartStoreDbContext.csproj", "{0F7D5CFC-EAA8-4B42-987B-5142680D062C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD3AA5CB-0C26-4DF7-B461-42D8A0640F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3AA5CB-0C26-4DF7-B461-42D8A0640F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3AA5CB-0C26-4DF7-B461-42D8A0640F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3AA5CB-0C26-4DF7-B461-42D8A0640F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F7D5CFC-EAA8-4B42-987B-5142680D062C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F7D5CFC-EAA8-4B42-987B-5142680D062C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F7D5CFC-EAA8-4B42-987B-5142680D062C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F7D5CFC-EAA8-4B42-987B-5142680D062C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED980C84-C0B5-4313-8AC1-4A3DABD24414}
+	EndGlobalSection
+EndGlobal
